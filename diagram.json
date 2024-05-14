@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "author": "rkeere",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": -268.2, "left": -192.6, "attrs": {} },
+    {
+      "type": "wokwi-lcd2004",
+      "id": "lcd1",
+      "top": -243.2,
+      "left": 188,
+      "attrs": { "pins": "i2c" }
+    },
+    { "type": "wokwi-dht22", "id": "dht1", "top": -460.5, "left": -120.6, "attrs": {} },
+    { "type": "wokwi-ir-remote", "id": "remote1", "top": -345.6, "left": -480, "attrs": {} },
+    { "type": "wokwi-ir-receiver", "id": "ir1", "top": -510.15, "left": -270.58, "attrs": {} }
+  ],
+  "connections": [
+    [ "lcd1:VCC", "uno:5V", "red", [ "h-38.4", "v211.3", "h-186.2" ] ],
+    [ "lcd1:GND", "uno:GND.2", "black", [ "h-48", "v211.2", "h-167.1" ] ],
+    [ "lcd1:SDA", "uno:A4", "green", [ "h-28.8", "v144.2", "h-109.8" ] ],
+    [ "lcd1:SCL", "uno:A5", "green", [ "h-19.2", "v125.1", "h-109.9" ] ],
+    [ "dht1:VCC", "uno:5V", "red", [ "h-192", "v355.2", "h265" ] ],
+    [ "dht1:GND", "uno:GND.1", "black", [ "v0" ] ],
+    [ "dht1:SDA", "uno:13", "green", [ "v48", "h28.5" ] ],
+    [ "ir1:DAT", "uno:12", "green", [ "v105.6", "h172.3" ] ],
+    [ "ir1:VCC", "uno:5V", "red", [ "v374.4", "h207.4" ] ],
+    [ "ir1:GND", "uno:GND.2", "black", [ "v384", "h226.5" ] ]
+  ],
+  "dependencies": {}
+}
